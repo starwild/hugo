@@ -34,7 +34,7 @@ jobs:
       # push docs
       - name: push
         run: |
-          git rm -r –-cached docs
+          git rm -r --cached docs
           cd docs
           git config --global user.email z@i23.ink
           git config --global user.name ${{github.repository_owner}}
