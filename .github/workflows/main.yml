@@ -46,5 +46,5 @@ jobs:
           git config --global user.password "${{secrets.GITHUB_TOKEN}}"
           git add .
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
-          git push https://${{github.repository_owner}}:${{secrets.GITHUB_TOKEN}}@github.com/starwild/page
+          git push https://${{github.repository_owner}}:${{secrets.MY_KEY}}@github.com/starwild/page
           cd -
