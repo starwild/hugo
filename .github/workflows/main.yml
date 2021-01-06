@@ -29,27 +29,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: build_and_push
-        run: cd $GITHUB_WORKSPACE && bash __src__/run.sh -b
+        run: bash run.sh -b
 
-      - name: commit
+      # push docs
+      - name: push
         run: |
           git config --global user.email z@i23.ink
-          git config --global user.name z
+          git config --global user.name ${{github.repository_owner}}
+          git config --global user.password ${{secrets.GITHUB_TOKEN}}
           git add .
-          git commit -m "action build $(date +%Y-%m-%d\ %H:%M:%S)" -a
-      
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.git.deleteRef({
-              owner: '${{ github.repository_owner }}',
-              repo: '${{ github.repository }}'.split('/')[1],
-              ref: 'publish'
-            }); 
-            
-      # push change to main
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
+          git push --set-upstream origin main
