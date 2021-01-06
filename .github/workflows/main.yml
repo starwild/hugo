@@ -27,6 +27,12 @@ jobs:
         with:
           ref: main
 
+      - name: clone
+        run: |
+          cd ..
+          git clone https://github.com/starwild/page docs
+          cd -
+
       # Runs a single command using the runners shell
       - name: build
         run: bash run.sh -b
@@ -34,9 +40,8 @@ jobs:
       # push docs
       - name: push
         run: |
-          git rm -r --cached docs
-          cd docs
-          git config --global user.email z@i23.ink
+          cd ../docs
+          git config --global user.email ""
           git config --global user.name ${{github.repository_owner}}
           git config --global user.password ${{secrets.GITHUB_TOKEN}}
           git add .

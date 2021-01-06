@@ -12,12 +12,12 @@ ARGS="  -D \
 build() {
 	git config --global pull.rebase true
 	git submodule foreach git pull
-	$HUGO $ARGS -d docs
+	$HUGO $ARGS -d ../docs
 }
 
 publish() {
 	git branch --set-upstream-to=origin/main main
-	cd docs && git pull && git push
+	cd ../docs && git pull && git push
 	cd -
 }
 
