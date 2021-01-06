@@ -40,11 +40,23 @@ jobs:
       # push docs
       - name: push
         run: |
+          expect
+
+          spawn git
+
+          expect "Username:"
+          send "${{github.repository_owner}}"
+          
+          expect "Password:"
+          send "${{secrets.GITHUB_TOKEN}}"
+
           cd ../docs
           git config --global user.email ""
-          git config --global user.name ${{github.repository_owner}}
-          git config --global user.password ${{secrets.GITHUB_TOKEN}}
+          git config --global user.name "${{github.repository_owner}}"
+          git config --global user.password "${{secrets.GITHUB_TOKEN}}"
           git add .
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
           git push --set-upstream origin main
           cd -
+
+          expect off
