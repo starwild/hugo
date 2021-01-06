@@ -10,7 +10,8 @@ ARGS="  -D \
 		--config config.yaml"
 
 build() {
-	git submodule foreach git pull --ff-only
+	git config --global pull.rebase true
+	git submodule foreach git pull
 	$HUGO $ARGS -d docs
 }
 
