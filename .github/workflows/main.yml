@@ -28,7 +28,7 @@ jobs:
           ref: main
 
       # Runs a single command using the runners shell
-      - name: build_and_push
+      - name: build
         run: bash run.sh -b
 
       # push docs
