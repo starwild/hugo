@@ -11,12 +11,13 @@ ARGS="  -D \
 
 build() {
 	git submodule foreach git pull
-	$HUGO $ARGS -d ../docs
+	$HUGO $ARGS -d docs
 }
 
 publish() {
 	git branch --set-upstream-to=origin/main main
-	cd ../docs && git pull && git push
+	cd docs && git pull && git push
+	cd -
 }
 
 server() {
@@ -24,7 +25,7 @@ server() {
 }
 
 commit() {
-	git add ..
+	git add .
 	git commit -m "commit $(date +%Y-%m-%d\ %H:%M:%S)"
 	git push origin main
 }
