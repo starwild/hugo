@@ -34,9 +34,11 @@ jobs:
       # push docs
       - name: push
         run: |
+          cd docs
           git config --global user.email z@i23.ink
           git config --global user.name ${{github.repository_owner}}
           git config --global user.password ${{secrets.GITHUB_TOKEN}}
           git add .
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
           git push --set-upstream origin main
+          cd -
