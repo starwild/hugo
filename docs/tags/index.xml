@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on starwild</title>
+    <link>https://starwild.github.io/tags/</link>
+    <description>Recent content in Tags on starwild</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Aug 2019 16:52:00 +0800</lastBuildDate><atom:link href="https://starwild.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://starwild.github.io/tags/linux/</link>
+      <pubDate>Sat, 24 Aug 2019 16:52:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://starwild.github.io/tags/golang/</link>
+      <pubDate>Thu, 04 Jul 2019 01:06:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://starwild.github.io/tags/database/</link>
+      <pubDate>Thu, 19 Oct 2017 19:25:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

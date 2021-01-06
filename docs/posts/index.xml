@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on starwild</title>
+    <link>https://starwild.github.io/posts/</link>
+    <description>Recent content in Posts on starwild</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 10 May 2020 20:50:00 +0800</lastBuildDate><atom:link href="https://starwild.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux library</title>
+      <link>https://starwild.github.io/posts/linux-library/</link>
+      <pubDate>Sun, 10 May 2020 20:50:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/linux-library/</guid>
+      <description>定位动态库文件 locate libGL.so
+打印载入动态库的过程 export LD_DEBUG=libs
+打印出当前缓存文件所保存的所有共享库的名字 ldconfig -p</description>
+    </item>
+    
+    <item>
+      <title>Rust 入门之安装</title>
+      <link>https://starwild.github.io/posts/Rust-%E5%85%A5%E9%97%A8%E4%B9%8B%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 16 Feb 2020 22:03:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Rust-%E5%85%A5%E9%97%A8%E4%B9%8B%E5%AE%89%E8%A3%85/</guid>
+      <description>准备工具 官方网站 https://www.rust-lang.org/。 镜像站点 https://lug.ustc.edu.cn/wiki/mirrors/help/rust-crates
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+set RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static set RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+安装 启动安装程序rustup-init.exe, 或安装脚本。 https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe curl &amp;ndash;proto &amp;lsquo;=https&amp;rsquo; &amp;ndash;tlsv1.2 -sSf https://sh.rustup.rs | sh
+镜像 在 $HOME/.cargo/config 配置镜像，
+[source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>记一次grub引导配置</title>
+      <link>https://starwild.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1grub%E5%BC%95%E5%AF%BC%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 05 Feb 2020 16:24:43 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1grub%E5%BC%95%E5%AF%BC%E9%85%8D%E7%BD%AE/</guid>
+      <description>Centos7 启动过程中进入grub2的启动菜单。菜单中默认的第一个启动项的内核已经不存在，启动失败。 尝试更改/boot/efi/centos/grub.conf， 发现与启动菜单中的内核版本号对不上。 使用fdisk -l 查看，发现有单独的efi分区/sda1 。 当前系统的/boot/分区挂载的是/sda2。 所以前面修改的/boot/efi/centos/grub.conf其实是/sda2中的文件。 尝试挂载/sda1，系统提示unknown filesystem type vfat 搜索答案无果，偶然发现 fdisk 提示 分区为 msdos 格式。 使用 mount -t msdos /dev/sda1 /mnt/ 挂载成功。 修改grub.conf配置文件，注释无效的第一个启动项，系统重启成功。</description>
+    </item>
+    
+    <item>
+      <title>lsyncd同步</title>
+      <link>https://starwild.github.io/posts/lsyncd%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Tue, 03 Sep 2019 08:42:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/lsyncd%E5%90%8C%E6%AD%A5/</guid>
+      <description>参考
+几大实时同步工具比较 https://www.cnblogs.com/zxci/p/6243574.html
+Lsyncd搭建同步镜像-用Lsyncd实现本地和远程服务器之间实时同步 https://www.cnblogs.com/jiangzhaowei/p/8298416.html</description>
+    </item>
+    
+    <item>
+      <title>yum manual</title>
+      <link>https://starwild.github.io/posts/yum-manual/</link>
+      <pubDate>Sun, 25 Aug 2019 11:03:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/yum-manual/</guid>
+      <description>下载包以及依赖包离线安装 yum install yum-utils yumdownloader &amp;ndash;resolve &amp;ndash;destdir /home/z/myrpm/ mariadb-server</description>
+    </item>
+    
+    <item>
+      <title>systemd manual</title>
+      <link>https://starwild.github.io/posts/systemd-manual/</link>
+      <pubDate>Sat, 24 Aug 2019 16:52:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/systemd-manual/</guid>
+      <description>使用脚本启动主程序，在使用systemd时，需要删除nohup启动，切保证启动脚本中不会报错。
+参考 http://www.jinbuguo.com/systemd/systemd.index.html http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html
+cp test.service /usr/lib/systemd/system
+systemctl daemon-reload systemctl enable test systemctl start test systemctl disable test systemctl stop test systemctl restart test systemctl reload test
+test.service
+[Unit] Description= Documentation= After=network.target Wants= [Service] #EnvironmentFile= WorkingDirectory=/home/z/Workspace/systemd/ ExecStart=/bin/bash /home/z/Workspace/systemd/start.sh # simple fork oneshot  Type=simple # control-group process mixed none # KillMode= control-group  # RemainAfterExit=yes 进程退出后服务仍然执行 # on-success on-failure always on Restart=always RestartSec=10s [Install] WantedBy=multi-user.target </description>
+    </item>
+    
+    <item>
+      <title>crontab manual</title>
+      <link>https://starwild.github.io/posts/crontab-manual/</link>
+      <pubDate>Sat, 24 Aug 2019 12:34:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/crontab-manual/</guid>
+      <description>参考: https://www.cnblogs.com/longjshz/p/5779215.html
+crontab -u root -e 59 18 * * * root /sbin/poweroff
+注意：命令和脚本名要使用完整路径</description>
+    </item>
+    
+    <item>
+      <title>openssl ca make</title>
+      <link>https://starwild.github.io/posts/openssl-ca-make/</link>
+      <pubDate>Fri, 23 Aug 2019 20:58:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/openssl-ca-make/</guid>
+      <description>简单版 自签名证书 原文链接：https://blog.csdn.net/zheyiw/article/details/88909697
+1，自制CA私钥 openssl genrsa -des3 -out ca.key 4096 2，自制CA证书 openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
+3，自制Server私钥，生成免密码版本 openssl genrsa -des3 -out server.key 4096 openssl rsa -in server.key -out server.nosecret.key 4，制作csr文件 openssl req -new -key server.key -out server.csr 5，用CA证书私钥对csr签名（CA不能用X509，这点需要注意）生成Server证书 openssl ca -days 3650 -in server.csr -cert ca.crt -keyfile ca.key -out server.crt
+提示文件打开失败可以参考以下指令 sudo mkdir /etc/ssl/newcerts touch /etc/ssl/index.txt touch /etc/ssl/serial echo &amp;ldquo;01&amp;rdquo; &amp;gt; /etc/ssl/serial echo &amp;ldquo;01&amp;rdquo; &amp;gt; /etc/ssl/index.</description>
+    </item>
+    
+    <item>
+      <title>firewalld manual</title>
+      <link>https://starwild.github.io/posts/firewalld-manual/</link>
+      <pubDate>Fri, 23 Aug 2019 20:02:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/firewalld-manual/</guid>
+      <description>from https://www.cnblogs.com/xxoome/p/7115614.html 查看状态 # 查看服务状态 systemctl status firewalld # 查看防火墙本身状态 firewall-cmd --state 开启、重启、关闭 # 开启 service firewalld start # 重启 service firewalld restart # 关闭 service firewalld stop # 重载 firewall-cmd --reload 规则变更 # 查看防火墙规则 firewall-cmd --list-all # 查询端口是否开放 firewall-cmd --query-port=8080/tcp # 开放80端口 firewall-cmd --permanent --add-port=80/tcp # 移除端口 firewall-cmd --permanent --remove-port=8080/tcp 附录  firewall-cmd 是Linux提供的操作firewall的一个工具 firewall-cmd 底层使用iptable或者nftable firewall-cmd 是centos默认的防火墙管理工具 其他类似工具还有ufw，出现在ubuntu及其衍生版本  </description>
+    </item>
+    
+    <item>
+      <title>bash shell manual</title>
+      <link>https://starwild.github.io/posts/bash-shell-manual/</link>
+      <pubDate>Wed, 21 Aug 2019 22:21:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/bash-shell-manual/</guid>
+      <description>删除  清空屏幕, &amp;lt;ctrl+e&amp;gt; 光标跳至命令结尾 &amp;lt;ctrl+a&amp;gt; 光标跳至命令开始 &amp;lt;ctrl+b&amp;gt; 光标左移一个字母 &amp;lt;ctrl+f&amp;gt; 光标右移一个字母 &amp;lt;ctrl+t&amp;gt; 交换光标位置前的两个字符 &amp;lt;ctrl+h&amp;gt; 删除光标前一个字符 &amp;lt;ctrl+w&amp;gt; 移除光标前的一个单词 &amp;lt;ctrl+u&amp;gt; 清除光标前至行首间的所有内容 &amp;lt;ctrl+k&amp;gt; 清除光标后至行尾的内容 &amp;lt;ctrl+y&amp;gt; 粘贴或者恢复上次的删除 &amp;lt;ctrl+p&amp;gt; 前一个命令 &amp;lt;ctrl+n&amp;gt; 后一个命令 &amp;lt;ctrl+r&amp;gt; 历史命令搜索  中断当前的命令并返回Shell  中断当前的通信或从文件中退出 &amp;lt;ctrl+z&amp;gt; 暂停当前进程bg后台运行,fg转到前台
+while [ 1 ]; do sleep 1; ll; done # 无限循环 while [ $i -lt 10 ]; do echo $i;let &amp;ldquo;i=$i+1&amp;rdquo;; done # 有限循环 cat raw.txt | while read line; do echo $line; done # readline until [ 1 = 0 ]; do sleep 1; ll; done # 无限循环 for i in /media/m* ; do ls -l $i; done # 与目录资源结合 if [ 1 -eq 1 ]; then ll ;fi # test常用判断 if [[ 0 -eq 0 &amp;amp;&amp;amp; 1 -eq 0 ]]; then ll ;fi if [ 0 -eq 0 -a 1 -eq 0 ]; then ll ;fi if [ !</description>
+    </item>
+    
+    <item>
+      <title>archlinux manual</title>
+      <link>https://starwild.github.io/posts/archlinux-manual/</link>
+      <pubDate>Sun, 18 Aug 2019 19:50:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/archlinux-manual/</guid>
+      <description>GPT分区 + GRUB + BIOS启动 https://www.jianshu.com/p/be0f47f376b1</description>
+    </item>
+    
+    <item>
+      <title>PyQt5 使用笔记</title>
+      <link>https://starwild.github.io/posts/PyQt5-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 18 Aug 2019 01:43:21 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/PyQt5-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>文件对话
+directory1 = QFileDialog.getExistingDirectory(self, &amp;#34;选取文件夹&amp;#34;, &amp;#34;C:/&amp;#34;) #起始路径 fileName1, filetype = QFileDialog.getOpenFileName(self, &amp;#34;选取文件&amp;#34;, &amp;#34;C:/&amp;#34;, &amp;#34;All Files (*);;Text Files (*.txt)&amp;#34;) #设置文件扩展名过滤,注意用双分号间隔 files, ok1 = QFileDialog.getOpenFileNames(self, &amp;#34;多文件选择&amp;#34;, &amp;#34;C:/&amp;#34;, &amp;#34;All Files (*);;Text Files (*.txt)&amp;#34;) fileName2, ok2 = QFileDialog.getSaveFileName(self, &amp;#34;文件保存&amp;#34;, &amp;#34;C:/&amp;#34;, &amp;#34;All Files (*);;Text Files (*.txt)&amp;#34;) </description>
+    </item>
+    
+    <item>
+      <title>Django笔记</title>
+      <link>https://starwild.github.io/posts/Django%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 04 Aug 2019 00:26:44 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Django%E7%AC%94%E8%AE%B0/</guid>
+      <description>python manage.py migrate python manage.py createsuperuser</description>
+    </item>
+    
+    <item>
+      <title>Python笔记</title>
+      <link>https://starwild.github.io/posts/Python-notes/</link>
+      <pubDate>Sat, 03 Aug 2019 21:33:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Python-notes/</guid>
+      <description>##多线程
+CPython的实现中因为GIL的存在，Python的多线程实际上是单线程。multiprocessing包用于多进程处理，但此进程是系统级的进程。
+from multiprocessing import Pool import random,time def work(i): print(i) time.sleep((random.random()*0.5)) print(i[0],i[1]) if __name__ == &amp;#34;__main__&amp;#34;: print(&amp;#39;start&amp;#39;) data = [(&amp;#39;a&amp;#39;,2),(&amp;#39;b&amp;#39;,3),(&amp;#39;c&amp;#39;,4)] # 第一种用法 p = Pool(2) for x in p.imap(work, data): pass print(&amp;#39;done&amp;#39;) # 第二种用法 p0 = Pool(2) p0.map_async(work,data) p0.close() # pool无法再放入进程，pool内进程执行完成后销毁 # p0.terminate() 直接销毁进程池  p0.join() # 第三种用法 print(&amp;#39;map_async_done&amp;#39;) p1 = Pool(2) p1.apply_async(func=work,args=((1,2),)) p1.close() # p1.terminate() p1.join() print(&amp;#39;done&amp;#39;) jupyter-notobook 展示二进制图片
+from IPython.display import Image,display display(Image(data=)) </description>
+    </item>
+    
+    <item>
+      <title>manjaro- manual</title>
+      <link>https://starwild.github.io/posts/manjaro-manual/</link>
+      <pubDate>Sat, 20 Jul 2019 10:12:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/manjaro-manual/</guid>
+      <description>修改软件源 sudo pacman-mirrors -i -c China -m rank sudo pacman -Syyu 打开pamac-manager，开启aur
+安装中文字体，否则有些程序会乱码（比如wps，vlc） pacman -S wqy-zenhei ttf-fireflysung
+安装输入法 sudo pacman -S fcitx-im #默认全部安装 sudo pacman -S fcitx-configtool sudo pacman -S fcitx-sogoupinyin sudo nano ~/.xprofile
+export GTK_IM_MODULE=fcitxexport QT_IM_MODULE=fcitxexport XMODIFIERS=&amp;quot;@im=fcitx&amp;quot; 用户目录改英文 export LANG=en_US xdg-user-dirs-gtk-update export LANG=zh_CN
+oh-my-zsh chsh -s /bin/zsh sh -c &amp;ldquo;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+vim ~/.zshrc plugins=( git zsh-syntax-highlighting zsh-autosuggestions )</description>
+    </item>
+    
+    <item>
+      <title>MicroPython With ESP32</title>
+      <link>https://starwild.github.io/posts/MicroPython-With-ESP32/</link>
+      <pubDate>Mon, 08 Jul 2019 00:43:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/MicroPython-With-ESP32/</guid>
+      <description>install esptool pip install esptool sudo esptool.py &amp;ndash;chip esp32 &amp;ndash;port /dev/ttyUSB0 erase_flash #download fireware http://www.micropython.org/download#esp32 sudo esptool.py &amp;ndash;chip esp32 &amp;ndash;port /dev/ttyUSB0 write_flash -z 0x1000 ~/install/esp32-20190707-v1.11-126-g7c2e83324.bin picocom -b 115200 /dev/ttyUSB0
+install emp-ide http://www.1zlab.com/wiki/micropython-esp32/emp-ide-userguide/
+code example import network wifi = network.WLAN(network.STA_IF) wifi.active(True) wifi.connect(&amp;#39;zzz&amp;#39;, &amp;#39;zhangxin&amp;#39;) import upip upip.install(&amp;#39;emp-1zlab&amp;#39;) from emp_boot import set_boot_mode set_boot_mode() #led from machine import Pin import time led = Pin(16, Pin.OUT) c = 10 while (c &amp;gt; 0): print(c) c -= 1 print(&amp;#34;on&amp;#34;) led.</description>
+    </item>
+    
+    <item>
+      <title>CGO 资料收集</title>
+      <link>https://starwild.github.io/posts/CGO-%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Thu, 04 Jul 2019 01:06:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/CGO-%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86/</guid>
+      <description>go通过swig封装、调用c++共享库的技术总结 https://www.cnblogs.com/terencezhou/p/10059156.html</description>
+    </item>
+    
+    <item>
+      <title>防止SSH暴力攻击</title>
+      <link>https://starwild.github.io/posts/%E9%98%B2%E6%AD%A2SSH%E6%9A%B4%E5%8A%9B%E6%94%BB%E5%87%BB/</link>
+      <pubDate>Mon, 19 Mar 2018 23:50:49 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E9%98%B2%E6%AD%A2SSH%E6%9A%B4%E5%8A%9B%E6%94%BB%E5%87%BB/</guid>
+      <description>解除登录限制 #!/bin/bash  IP=$1 if [ -n &amp;#34;$IP&amp;#34; ];then if [[ $IP =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]];then service denyhosts stop sed -i &amp;#34;/$IP/d&amp;#34; /etc/hosts.deny sed -i &amp;#34;/$IP/d&amp;#34; /var/lib/denyhosts/hosts-valid sed -i &amp;#34;/$IP/d&amp;#34; /var/lib/denyhosts/users-hosts sed -i &amp;#34;/$IP/d&amp;#34; /var/lib/denyhosts/hosts sed -i &amp;#34;/$IP/d&amp;#34; /var/lib/denyhosts/hosts-root sed -i &amp;#34;/$IP/d&amp;#34; /var/lib/denyhosts/hosts-restricted iptables -D INPUT -s $IP -j DROP echo $IP remove from Denyhosts service denyhosts start else echo &amp;#34;This is not IP&amp;#34; fi else echo &amp;#34;IP is empty&amp;#34; fi 记录登录日志 vim /etc/ssh/sshd_config SyslogFacility AUTHPRIV LogLevel INFO</description>
+    </item>
+    
+    <item>
+      <title>数据结构中的树</title>
+      <link>https://starwild.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E6%A0%91/</link>
+      <pubDate>Mon, 19 Mar 2018 00:03:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E6%A0%91/</guid>
+      <description>###二叉树
+ 每个父节点只能有两个子节点 ###二叉搜索树   二叉搜索树，既能像顺序数组一样进行二叉搜索，又能像链表一样在数据中间自由插入新数据
+  每个父节点只能有两个子节点 左节点&amp;lt;父节点&amp;lt;右节点 ###AVL树   AVL树保持自平衡，防止因数据偏斜到使树退化成链表的情况。
+  每个父节点只能有两个子节点 左节点&amp;lt;父节点&amp;lt;右节点 任意叶子节点到根节点的高度不能相差超过1  ###红黑树
+ 红黑树在保持自平衡的基础上减少了旋转操作，红黑树需要把树加载到内存。
+  节点可以是黑色或红色 根节点和叶子节点是黑色 红色节点的子节点是黑色 任意叶子节点到根节点的最短路径上的黑色节点数量一致  ###B—树
+ 用于MongoDB这样的KV数据库
+  每个节点都存数据地址，一个节点可有不止一个key 可能在根节点就查到了数据，也可能遍历到叶子才查到数据，查询效率不稳定，但整体查询效率比B+树更高。   ###B+树
+ 常用于文件系统和关系型数据库系统
+  只有最下方的叶子节点可以存数据的地址 B+树呈矮胖形态，查询到叶子节点通常需要3~4次IO 每次查找都要查询到叶子节点，查找效率稳定 叶子节点之间按链表形式连接，方便遍历和区间查找 磁盘每个区块512Byte，文件系统一个族为4K、8K、16K，文件系统一次IO取一个族。一个节点的容量安排为4K，有助于减少IO次数。  疑问❓ 为什么mongodb和mysql分别用B树和B+树？</description>
+    </item>
+    
+    <item>
+      <title>SSH相关操作笔记</title>
+      <link>https://starwild.github.io/posts/SSH%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 16 Mar 2018 21:59:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/SSH%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</guid>
+      <description> ssh登录 ssh root@localhost ssh -l root -p 22 localhost ssh免密码登录 ssh-keygen ssh-copy-id -i ~/.ssh/id_rsa.pub root@localhost 复制文件 scp root@localhsot:/root/hello.zip ~/hello.zip  </description>
+    </item>
+    
+    <item>
+      <title>Python 2 实例手册</title>
+      <link>https://starwild.github.io/posts/Python-2-handbook/</link>
+      <pubDate>Fri, 16 Mar 2018 15:33:36 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Python-2-handbook/</guid>
+      <description>Python实例手册 说明 手册制作: 雪松 littlepy reboot更新日期: 2014-10-29欢迎系统运维加入Q群: 198173206 # 加群请回答问题欢迎运维开发加入Q群: 365534424 # 不定期技术分享请使用&amp;quot;notepad++&amp;quot;打开此文档,&amp;quot;alt+0&amp;quot;将函数折叠后方便查阅请勿删除信息，转载请说明出处，抵制不道德行为。错误在所难免，还望指正！# python实例手册下载地址:http://hi.baidu.com/quanzhou722/item/cf4471f8e23d3149932af2a7# shell实例手册最新下载地址:http://hi.baidu.com/quanzhou722/item/f4a4f3c9eb37f02d46d5c0d9# LazyManage运维批量管理软件下载[shell]:http://hi.baidu.com/quanzhou722/item/4ccf7e88a877eaccef083d1a# LazyManage运维批量管理软件下载[python]:http://hi.baidu.com/quanzhou722/item/4213db3626a949fe96f88d3c 1 基础 查看帮助  import osfor i in dir(os):print i # 模块的方法help(os.path) # 方法的帮助 调试  python -m trace -t aaaaaa.py pip模块安装  yum install python-pip # centos安装pipsudo apt-get install python-pip # ubuntu安装pippip官方安装脚本wget https://raw.</description>
+    </item>
+    
+    <item>
+      <title>Shell实例手册</title>
+      <link>https://starwild.github.io/posts/Shell%E5%AE%9E%E4%BE%8B%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Fri, 16 Mar 2018 15:24:36 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Shell%E5%AE%9E%E4%BE%8B%E6%89%8B%E5%86%8C/</guid>
+      <description>Shell实例手册
+0说明{
+手册制作: 雪松更新日期: 2013-12-06欢迎系统运维加入Q群: 198173206请使用&amp;quot;notepad++&amp;quot;打开此文档,&amp;quot;alt+0&amp;quot;将函数折叠后方便查阅请勿删除信息，转载请说明出处，抵制不道德行为。错误在所难免，还望指正！# shell实例手册最新下载地址:http://hi.baidu.com/quanzhou722/item/f4a4f3c9eb37f02d46d5c0d9# LazyManage系统批量管理软件下载(shell):http://hi.baidu.com/quanzhou722/item/4ccf7e88a877eaccef083d1a# python实例手册下载地址:http://hi.baidu.com/quanzhou722/item/cf4471f8e23d3149932af2a7 }
+1文件{
+touch file # 创建空白文件rm -rf 目录名 # 不提示删除非空目录(-r:递归删除 -f强制)dos2unix # windows文本转linux文本 unix2dos # linux文本转windows文本enca filename # 查看编码 安装 yum install -y enca md5sum # 查看md5值ln 源文件 目标文件 # 硬链接ln -s 源文件 目标文件 # 符号连接readlink -f /data # 查看连接真实目录cat file | nl |less # 查看上下翻页且显示行号 q退出head # 查看文件开头内容head -c 10m # 截取文件中10M内容split -C 10M # 将文件切割大小为10Mtail -f file # 查看结尾 监视日志文件file # 检查文件类型umask # 更改默认权限uniq # 删除重复的行uniq -c # 重复的行出现次数uniq -u # 只显示不重复行paste a b # 将两个文件合并用tab键分隔开paste -d&#39;+&#39; a b # 将两个文件合并指定&#39;+&#39;符号隔开paste -s a # 将多行数据合并到一行用tab键隔开chattr +i /etc/passwd # 设置不可改变位more # 向下分面器locate 字符串 # 搜索wc -l file # 查看行数cp filename{,.</description>
+    </item>
+    
+    <item>
+      <title>开发环境的Mysql安装</title>
+      <link>https://starwild.github.io/posts/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84Mysql%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 16 Mar 2018 11:46:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84Mysql%E5%AE%89%E8%A3%85/</guid>
+      <description> 初始化 mysql &amp;ndash;initialize 配置文件 [client] default-character-set=utf8 [mysqld] port=3306 default-storage-engine=INNODB character-set-server=utf8 collation-server=utf8_general_ci 启动 mysql &amp;ndash;console &amp;ndash;explict_default_for_timestamp=true 连接 mysql -uroot -p 管理 mysqladmin -uroot -p password mysqladmin -uroot shutdown  </description>
+    </item>
+    
+    <item>
+      <title>Emacs 使用精要</title>
+      <link>https://starwild.github.io/posts/Emacs-%E4%BD%BF%E7%94%A8%E7%B2%BE%E8%A6%81/</link>
+      <pubDate>Fri, 16 Mar 2018 11:36:43 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Emacs-%E4%BD%BF%E7%94%A8%E7%B2%BE%E8%A6%81/</guid>
+      <description>使用emacs的daemon模式快速使用emacsclient -nw 启动emacs
+# alias emacs alias emacsd=&amp;#39;emacs --daemon&amp;#39; alias e=&amp;#39;emacsclient -t&amp;#39; alias ec=&amp;#39;emacsclient -c&amp;#39; # run emacs daemon [[ -z $(ps -C &amp;#39;emacs --daemon&amp;#39; -o pid=) ]] &amp;amp;&amp;amp; emacsd # add kill emacs function function kill-emacs(){ emacsclient -e &amp;#34;(kill-emacs)&amp;#34; emacs_pid=$( ps -C &amp;#39;emacs --daemon&amp;#39; -o pid= ) if [[ -n &amp;#34;${emacs_pid}&amp;#34; ]];then kill -9 &amp;#34;${emacs_pid}&amp;#34; fi } </description>
+    </item>
+    
+    <item>
+      <title>容易遗忘的知识点</title>
+      <link>https://starwild.github.io/posts/%E5%AE%B9%E6%98%93%E9%81%97%E5%BF%98%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Sun, 12 Nov 2017 10:42:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E5%AE%B9%E6%98%93%E9%81%97%E5%BF%98%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>最近在微信看到一篇文章提到了面试常问的知识点。尝试着去回答这些问题，发现好多都回答不上来，或者讲不清楚。以后抽些时间把不清楚的问题的答案都补全。
+ 面试常问的知识点？ 1）集合相关问题（必问）： HashMap、LinkedHashMap、ConcurrentHashMap、ArrayList、LinkedList的底层实现。 HashMap的底层实现 Java8以前，HashMap由数组存储节点，节点与节点之间构成链表。从Java8开始，HashMap的key超过8个，会被转换为红黑树结构。
+链表结构的HashMap Entry被存储在table数组中。HashMap默认构造方法会构造空间为16，负载系数为0.75的table数组。key通过散列计算直接获得table上存储Entry的下标地址hashcode。table中存储的Entry数量超过数组空间乘以负载系数时，数组就会进行resize，数组长度翻倍。由于resize需要重新计算key的hashcode，比较耗费性能，如果能预估key的数量，可以在构造时指定初始空间大小。如果存着key的hashcode相同时，第一个加入key的next引用指向第二个加入的key，以此类推形成链表。在JDK8或以上里，如果一个hashcode对应的链表节点超过8个时，链表会被重新整理为红黑树。如果一个hashcode对应的链表是红黑树，而节点又少于6个时，红黑树又会被重新整理为链表。
+/** * The table, resized as necessary. Length MUST Always be a power of two. */ transient Entry[] table; static class Entry&amp;lt;K,V&amp;gt; implements Map.Entry&amp;lt;K,V&amp;gt; { final K key; V value; Entry&amp;lt;K,V&amp;gt; next; final int hash; …… } 红黑树结构的HashMap HashMap和Hashtable的区别。 ArrayList、LinkedList、Vector的区别。 HashMap和ConcurrentHashMap的区别。 HashMap和LinkedHashMap的区别。 HashMap是线程安全的吗。 ConcurrentHashMap是怎么实现线程安全的。 2）线程相关问题（必问）： 创建线程的3种方式。 什么是线程安全。 Runnable接口和Callable接口的区别。 wait方法和sleep方法的区别。 synchronized、Lock、ReentrantLock、ReadWriteLock。 介绍下CAS(无锁技术)。 什么是ThreadLocal。 创建线程池的4种方式。 ThreadPoolExecutor的内部工作原理。 分布式环境下，怎么保证线程安全。 想要朝这方面发展或者真心有兴趣的。可以找我要一些基础的学习视频，Q号码：3300863615，这个是免费的，希望同学找我要的时候不要有理所应当的态度，毕竟都是我的心血，希望你是真的有一颗想要学好java的心，我也会尽所能的去帮助你成为一名优秀的程序员。
+3）JVM相关问题： 介绍下垃圾收集机制（在什么时候，对什么，做了什么）。 垃圾收集有哪些算法，各自的特点。 类加载的过程。 双亲委派模型。 有哪些类加载器。 能不能自己写一个类叫java.</description>
+    </item>
+    
+    <item>
+      <title>实例化需求学习第一部分</title>
+      <link>https://starwild.github.io/posts/%E5%AE%9E%E4%BE%8B%E5%8C%96%E9%9C%80%E6%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/</link>
+      <pubDate>Sat, 11 Nov 2017 13:32:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E5%AE%9E%E4%BE%8B%E5%8C%96%E9%9C%80%E6%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/</guid>
+      <description>最近公司在推进实例化需求。在info上找到了《实例化需求》这本书的电子版，瞬间剁手赶紧买下来学习一下。
+ 先介绍一下作者Gojko Adzic。战略软件交付顾问，专注敏捷和精益开发。尤其擅长敏捷测试、实例化需求和行为驱动开发。感觉头衔不是很多啊，是不是介绍得太谦虚了。 内容提要：本书是在世界各地调查了多个短腿交付过程后的经验总结。书中介绍了这些团队如何在很短的周期内说明需求、开发软件，并交付正确的、无缺陷的产品；为团队在实施实例化需求说明是使用的模式、想法和工件创建了一致的语言；展示了案例中的团队用来实现实例需求说明原则的关键性实践；并在案例分析部分展示了一些团队实施实例化需求说明的历程。本书适合与项目管理、开发、测试、交付有关的人员阅读。
+看看现状 在实施敏捷的实践有很多，这些方法大多都带有实现敏捷或者精益的目的，比如极限编程、Scrum、看板。 大多公司在做敏捷时都会结合多种敏捷实践，组合中使用自己团队的敏捷方法。在将需求变成产品的过程中，人们有许多用于描述需求并使之作为业务、SA、开发、测试、UX都能看得多的中间语言的实践。以下实践名字不同但是作法确实一致的。
+ 敏捷验收测试 验收测试驱动开发 实例驱动开发 故事测试 行为驱动开发 实例化需求说明 实例化需求是一份活着的验证文档。测试人员执行实例化需求文档中的步骤即可验证需求中的功能，这也是为什么实例化需求被称为可执行的活文档。如果传统的需求文档由描述式语言写成，那么实例化文档就是由过程式语言写成。  主要优点 实例化需求的主要优点 现在人们开发一套软件的时间不在向以前一样需要持续好几年。软件开发的时间缩短到半年甚至是几周。人们不再花费大量的时间来做软件开发前期的分析和设计工作，以及漫长的手动测试回归工作。 技术上的成功和产品上的成功都很重要，软件开发实践必须满足以下几点；
+ 保证所有项目干系人和交付团队的成员都对需要交付那些东西由一致的理解。 由准确的需求说明，这样交付团队才能避免由磨棱两可和功能确实造成的无谓返工。 有用来衡量某项工作是否已经完成的客观标准。 具有用来引导软件功能或团队结构变更的文档。 传统意义上，构建正确的产品需要庞大的功能需求说明、文档以及漫长的测试阶段。如今软件都按照周或者月进行交付。为了适应新的交付模式我们应该朝着这些目标前进： 避免过度说明需求从而产生浪费、避免花时间在开发前会花时间的细节上。 有一种可靠的文档，可以解释系统的行为，据此我们能容易修改系统行为。 以最少的维护成本维持文档的相关性与可靠性。 适合短迭代和基于流的过程，这样能为即将开展的工作提供即时足够的信息。 所以敏捷团队构建正确产品所需要的文档特点是 即使编写 易于维护 精确、客观可测试  有效地实施变更 在对已有的软件实施大型变更时，实例化需求文档就好比是文字化的单元测试，你让对重构的过程充满信心。只要按照原来的实例需求文档进行开发和测试，产品不会有太多预料之外的改变。
+更高的产品质量 实例化需求是一种开发测试都能看得懂的系统逻辑语言。它将清楚了什么情况下该做什么。想想看一本词典，前面介绍词性最后给出给出些例子，让你有了更直观的理解。实例化需求让那些晦涩难懂的需求变得直观，减少了沟通障碍。软件开发中减少了沟通障碍使得缺陷在开发过程中就被发现。很多团队在开发周期的起始阶段使用实例化需求会让需求更加精确，尽早识别太含糊或有太多功能缺失的用户故事。如果没有实例化需求说明，团队经常要到开发中期或者上线前才发现需求不清楚的问题，中断的流程常常需要耗费大量的时间，导致迭代中的产品功能无法按时交付。
+更好的协作 单元测试案例面向程序方法，它可以告诉开发人员程序是不是正常功能，却不能告诉我们程序是否满足整体的业务需求。实例化需求说明使得团队可以用一种清晰、客观和可衡量的方式定义预期的功能。他还能加速反馈、改善开发流程，并防止中断计划好的工作。
+为什么实例化需求文档是活的 让我们来看看实例化需求文档的主要过程模式 [业务目标]&amp;ndash;（从目标中获取范围）&amp;ndash;&amp;gt;[用户故事]&amp;ndash;（需求举例沟通）&amp;ndash;&amp;gt;[关键实例]&amp;ndash;（提炼需求说明）&amp;ndash;&amp;gt;[实例化需求说明]&amp;ndash;（自动化验证）&amp;ndash;&amp;gt;[可执行的需求]&amp;ndash;（验证/更新）&amp;mdash;&amp;gt;[活文档]。
+关键过程模式 从目标中获取范围 商业用户不是软件设计师。我们以客户的业务目标为起始，通过协作界定可以实现的目标范围。
+协作制定需求说明 在设计需求阶段，如果开发和测试人员都没有参与，那么我们就必须单独将这些需求传达给他们。在需求传递的过程中必然会丢失一些信息，甚至可能是关键信息。协作制定需求说明使我们能够充分利用整个团队的知识和经验，它还创造了需求的集团所有制，让每个人都能更多地参与到交付过程中。
+举例说明 自然语言是模棱两可的，而且和上下文相关。开发人员和测试人员对一些棘手需求可能有着截然不同的解释。举例说明让团队和用户一起确切地描述那些预期功能的关键实例。在此过程中，开发人员和测试人员往往会提出一些额外的实例，用于说明边界的情况，或重点标识出系统中某些特别有问题的地方。这可以清除功能分歧和不一致的地方，并确保所有参与者都对需求交付的东西有一个共识，避免由误解及解释不到位导致的返工。
+提炼需求说明 讨论过程会产生一些与需求不相关的细节。通过提炼需求获得具体的、精确的上下文。它是一种工作规范和验收测试案例，也是很好的功能回归测试案例。
+自动化验证时不修改需求说明 为了从关键实例中获的最大的收益，成功的团队在做自动化验证时不会去改变需求信息。在自动化过程中，他们几乎完全不改变需求。这样就不会有错误理解的风险。当他们进行自动化验证而不改变需求说明时，电子化的关键实例和把他们写到白板上看起来一样：团队的所有成员都可以直接看到。这是一份可执行的需求说明，我们把它当作开发目标，轻松地检查系统是否按照预期运作，并向用户进行澄清。如果需要变更需求，只需要在一个地方进行变更。
+频繁验证 代码往往是我们唯一能真正信任的东西，大多数编写好的文档在软件交付前就已经过时了。通过频繁地检查所有可执行的需求说明，团队能快速地发现系统和需求说明之间的任何差别。因为可执行的需求说明很容易理解，团队可以和用户讨论这些改动。并决定如何处理。
+演化出一个文档系统 活文档是关于系统功能可靠的、权威的信息源，任何人都可以获得。他和代码一样可靠，但是更容易阅读和理解。运营可以用它来查明系统在做什么以及这样做的原因。开发人员可以用它作为开发的目标。测试可以用它来作为测试案例或回归案例。分析功能变更前请求影响时，系统分析师可以从它开始着手。
+实际的例子 商业目标 良好的商业目标例子 12个月内对现有客户提高50%的重复销售。
+范围 例子：客户注册一个VIP计划，VIP客户有资格获得特定物品的免费送货权利。 会员忠诚度管理系统基本功能的用户故事
+ 为了能够对现有客户做产品直销，作为营销经理，我想让客户通过加入VIP计划注册个人信息。 为了吸引现有客户注册VIP计划，作为营销经理，我要系统为VIP客户提供特定物品的免费送货。 为了节省开支，作为现有客户，我希望能收到特价优惠的信息。  关键实例 关键实例：免费送货</description>
+    </item>
+    
+    <item>
+      <title>实例化需求封面.jpg</title>
+      <link>https://starwild.github.io/posts/%E5%AE%9E%E4%BE%8B%E5%8C%96%E9%9C%80%E6%B1%82%E5%B0%81%E9%9D%A2.jpg/</link>
+      <pubDate>Sat, 11 Nov 2017 13:20:10 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E5%AE%9E%E4%BE%8B%E5%8C%96%E9%9C%80%E6%B1%82%E5%B0%81%E9%9D%A2.jpg/</guid>
+      <description>;s:25:&amp;ldquo;实例化需求封面.jpg&amp;rdquo;;s:4:&amp;ldquo;path&amp;rdquo;;s:35:&amp;quot;/usr/uploads/2017/11/3462487182.jpg&amp;quot;;s:4:&amp;ldquo;size&amp;rdquo;;i:15026;s:4:&amp;ldquo;type&amp;rdquo;;s:3:&amp;ldquo;jpg&amp;rdquo;;s:4:&amp;ldquo;mime&amp;rdquo;;s:10:&amp;ldquo;image/jpeg&amp;rdquo;;}</description>
+    </item>
+    
+    <item>
+      <title>敏捷武士笔记</title>
+      <link>https://starwild.github.io/posts/%E6%95%8F%E6%8D%B7%E6%AD%A6%E5%A3%AB%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Nov 2017 19:11:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E6%95%8F%E6%8D%B7%E6%AD%A6%E5%A3%AB%E7%AC%94%E8%AE%B0/</guid>
+      <description>Part1 敏捷简介 每周交付一些有价值的东西  要将大问题拆分为许多小问题&amp;ndash;逐步完成目标 要将注意力集中与最重要的事务&amp;ndash;可工作的软件 确保正在交付的软件可以工作&amp;ndash;充分测试 寻求反馈&amp;ndash;UAT 必要时可以改变过程&amp;ndash;延期 要勇于负责&amp;ndash;设定质量、进度、期望值  敏捷计划如何生效 排列用户故事由高级特性组成。根据优先级排列高级特性与用户故事。如果进度无法保证时，应改变计划减少用户故事来保证质量。制定不切实际的计划，只能祈求奇迹的发生。如果一个项目一直通过祈求奇迹的方式运行，那是多么地糟糕和失控。与业务开诚布公地说明风险、人力和需求的关系，让业务做出明确的决定。与其幻想着在有限的时间和资源内交付完美的软件，还不如期待最后会发生奇迹。
+“完成”的意思就是“完成” 详细的计划和设计以及测试设计不代表完成了所需的代码。实际编写代码时会遇到比设计过程中更多的问题。关联系统的错误可能导致编码无法继续，历史遗留的bug会让你花费更多的时间。多次更改让bug错综复杂，测试计划覆盖无法全面。设计文档不能说明任务完成了一半，它只是一份备忘录，让你有更多精力发现编码或测试前没有考虑到的问题。
+三条简单准则   在项目的初期不可能收集到所有的需求。 不管你收集到什么需求，最终他们肯定会发生变化。 总会由任务超时、超支。   接受第一条：即使没有完全准备好，也要大胆开始收集需求的敏捷旅程。 接受第二条：不必害怕需求变更，变化无可避免，不如想想如何调整计划。 接受第三条：任务超时或者超支时，不要感到有压力。对于变化频繁的项目来说，这只是正常状态。唯一能做的是设置号任务的优先级，把有限的资源用在紧急的任务中。 一旦接受以上三条简单的项目准则，那些在软件交付过程中经常困扰你的紧张和焦虑感就会消失。
+XXXXXCrystal X XX ScrumXXXXX XXXXXXX XX XX XXX XXXX XXXXXX XXXXXXXXX X X XXXLean X X XPX XX XXX XXX XX XKanban X X Your MethodX XXX敏捷是一种开发思维方式，但却不是终极解决方案。结合Scrum、XP、精益、看板甚至是你自己的独特方式解决实践问题。</description>
+    </item>
+    
+    <item>
+      <title>Redis 实验中遇到的一些问题</title>
+      <link>https://starwild.github.io/posts/Redis-%E5%AE%9E%E9%AA%8C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 02 Nov 2017 22:45:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Redis-%E5%AE%9E%E9%AA%8C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>如何在外网访问redis？ 在实例配置文件中修改以下配置：
+ 注释bind命令。  # bind 127.0.0.1 将保护模式改为no  protected-mode 打通防火墙  sudo ufw all 6379 </description>
+    </item>
+    
+    <item>
+      <title>linux网卡</title>
+      <link>https://starwild.github.io/posts/linux%E7%BD%91%E5%8D%A1/</link>
+      <pubDate>Thu, 02 Nov 2017 21:56:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/linux%E7%BD%91%E5%8D%A1/</guid>
+      <description># 找到可用的网卡 $ ifconfig -a # 添加网卡 $ sudo vim /etc/network/interfaces # 写入内容 iface enp0s9 inet dhcp # 启动网卡 $ ifup enp0s9 </description>
+    </item>
+    
+    <item>
+      <title>Java进行访问Https</title>
+      <link>https://starwild.github.io/posts/Java%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AEHttps/</link>
+      <pubDate>Fri, 27 Oct 2017 14:47:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Java%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AEHttps/</guid>
+      <description>导入证书 keytool -import -file test.crt -keystore ca_certs  信任所有证书 HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() { @Override public boolean verify(String s, SSLSession sslSession) { return true; } }); try { SSLContext sslc = SSLContext.getInstance(&amp;#34;TLS&amp;#34;); sslc.init(null, new TrustManager[]{new X509TrustManager() { @Override public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException { } @Override public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException { } @Override public X509Certificate[] getAcceptedIssuers() { return null; } }}, null); } catch (Exception e) { e.</description>
+    </item>
+    
+    <item>
+      <title>Web接口设计之数据安全</title>
+      <link>https://starwild.github.io/posts/Web%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Thu, 26 Oct 2017 20:24:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Web%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/</guid>
+      <description>最近有一个暴露在外网的接口服务需要加密。有了一些自己的想法，现记录下来。
+层次一 层次二 层次三 传输层加密 Http明文传输接口报文非常不安全，必须使用HTTPS来做传输层加密，防止报文数被简单截取。
+调用权限验证 做法来自于微信公众号开发中使用appid、nonce一次性随机数、盐、timestamp时间戳、用户名和密码来验证接口权限和建立双方互信。 客户端先向服务器发送获取token的请求，服务器验签后提供token给客户端。客户端调用接口时直接提供token，服务检查token是否存在、过期在根据情况提供api服务。
+访问控制列表 服务器判断用户的api请求是否在访问控制列表中，如果用户没有所需功能的权限，返回错误信息。java平台爱能够保护web安全的常见框架如Spring Security、Apache Shiro。</description>
+    </item>
+    
+    <item>
+      <title>改造过后的typecho编辑工具栏.PNG</title>
+      <link>https://starwild.github.io/posts/%E6%94%B9%E9%80%A0%E8%BF%87%E5%90%8E%E7%9A%84typecho%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7%E6%A0%8F.PNG/</link>
+      <pubDate>Fri, 20 Oct 2017 07:49:03 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E6%94%B9%E9%80%A0%E8%BF%87%E5%90%8E%E7%9A%84typecho%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7%E6%A0%8F.PNG/</guid>
+      <description>;s:41:&amp;ldquo;改造过后的typecho编辑工具栏.PNG&amp;rdquo;;s:4:&amp;ldquo;path&amp;rdquo;;s:35:&amp;quot;/usr/uploads/2017/10/1551369649.png&amp;quot;;s:4:&amp;ldquo;size&amp;rdquo;;i:3910;s:4:&amp;ldquo;type&amp;rdquo;;s:3:&amp;ldquo;png&amp;rdquo;;s:4:&amp;ldquo;mime&amp;rdquo;;s:9:&amp;ldquo;image/png&amp;rdquo;;}</description>
+    </item>
+    
+    <item>
+      <title>ACID、CAP和BASE</title>
+      <link>https://starwild.github.io/posts/ACIDCAP%E5%92%8CBASE/</link>
+      <pubDate>Thu, 19 Oct 2017 19:25:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/ACIDCAP%E5%92%8CBASE/</guid>
+      <description> ACID Atomicity Consistency Isolation Durability CAP Consistency Availability Partition tolerance BASE Basically Available Soft state Eventual </description>
+    </item>
+    
+    <item>
+      <title>大头与小头</title>
+      <link>https://starwild.github.io/posts/%E5%A4%A7%E5%A4%B4%E4%B8%8E%E5%B0%8F%E5%A4%B4/</link>
+      <pubDate>Wed, 18 Oct 2017 22:20:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E5%A4%A7%E5%A4%B4%E4%B8%8E%E5%B0%8F%E5%A4%B4/</guid>
+      <description>Little-Endian&amp;amp;Big-Endian
+例子 整数：6699 如果左边是起始地址0，右边无限大。 大头：数据从左到右存放-&amp;gt;1A2B 小头：数据从右到左存放-&amp;gt;2B1A
+代码 int main(void) { int i = 0x12345678; if(*((char*)&amp;amp;i) == 0x12) printf(&amp;#34;大端&amp;#34;); else printf(&amp;#34;小端&amp;#34;); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>二进制安全（binary safe）</title>
+      <link>https://starwild.github.io/posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8binary-safe/</link>
+      <pubDate>Wed, 18 Oct 2017 17:36:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8binary-safe/</guid>
+      <description>C语言的字符串依赖“\0”来识别字符串的末尾。如果一个需要存储的字符串中含有“\0”，那么C语言的字符串就不适合。二进制安全是不依赖于数据本身的某种格式来处理数据。 Redis中的SDS字符串使用了len变量来记录字符串的长度，原始数据使用字节数组来存储。任何形式的数据包括但不限于图片，声音，程序，文本。</description>
+    </item>
+    
+    <item>
+      <title>typecho 微调</title>
+      <link>https://starwild.github.io/posts/typecho-%E5%BE%AE%E8%B0%83/</link>
+      <pubDate>Tue, 17 Oct 2017 16:30:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/typecho-%E5%BE%AE%E8%B0%83/</guid>
+      <description>主题与插件 主题：Moricolor 插件：
+ Access	获取访客信息 Adminer	Adminer for Typecho Blog Platform AjaxComments	Ajax 内置嵌套评论 AppStore	Typecho 应用商店 APlayer for Typecho | Meting	APlayer for Typecho TpCache	Typecho缓存插件  typecho本身 typecho编辑器的工具栏在浏览器窗口过窄时，比如用手机打开，就会出现按钮“丢失”。工具栏的id和class都为wmd-button-row，问题出在css文件&amp;rsquo;admin/css/style.css&amp;rsquo;中高度的设置为26px，改成auto就可以了。
+.wmd-button-row{list-style:none;margin:0;padding:0;height:26px;line-height:1;} 原来的CSS样式 修改过后的工具栏在手机上也可以使用了。</description>
+    </item>
+    
+    <item>
+      <title>Redis 介绍</title>
+      <link>https://starwild.github.io/posts/Redis-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Tue, 17 Oct 2017 13:45:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Redis-%E4%BB%8B%E7%BB%8D/</guid>
+      <description>Redis应用介绍# 引文 简介 Redis诞生于2009年，是一个用ANSI C写成，基于键值对的可持久化开源内存数据库，最新版本为4.0.2。它提供对多种抽象数据结构的支持。授权类型为对商业友好的BSD授权。Redis是“REmote DIctionary Server”中大写字母的缩写。在DB-Engines排行上，经常被评为最受欢迎的键值对数据库。
+对编程语言的支持 Redis支持众多编程语言，包括常见的C/C++，C#，GO，Java, JavaScript（Nodejs）, PHP, Python, Ruby等。
+数据结构 使Redis变得流行的原因包括它内建多种实用的数据结构。Redis支持对数据的原子操作，对Set类型的集合操作等高级命令。目前Redis可支持的数据结构有string, lists, map, set, sorted set, bitmap, HyperLogLog, geo。
+原子性  Redis的单个操作有是原 子性，多个操作支持使用事务来保证数据安全。
+持久化 通常Redis将所有数据都放在内存中以加快操作速度。为了保障数据的安全，Redis提供了持久化的方案。用户可以选择使用RDB（Redis database ）快照，每隔一段时间将Redis在内存中的数据完整地写入到磁盘中，或者使用AOF（append-only file）来定时将数据变更日志写入到磁盘中,来增加系统的鲁棒性。
+主从（master-slave）复制 主从复制有利于系统读取速度，和数据冗余。Redis的master可以支持任意个slave。slave本身又可以作为其他slave的master。master-slave组成的集群就成了一个树形结构。Redis实现了完整的发布订阅功能。slave订阅一个channel以后，可以收到发送给master的消息，由此更新整个master-slave结构。
+性能 因为不必把变更写入磁盘，与需要遵守ACID的传统数据库相比，Redis有更高的效率，很容易支持10万/s以上的读写频率。除了AOF操作会多出一个线程外，通常一个Redis实例只有一个线程用于数据操作。因此，单个Redis不能并行执行任务，比如执行存储过程。
+集群 Redis在3.0版本推出了集群功能。Redis集群致力于在不使用代理额异步复制的情况下实现1000个节点以内的高性能线性伸缩。对集群写入时，能尽量保证写入的一致性。当有mater或者slave宕机时，集群能够自我调节，自动平衡分配master和slave。
+安装  redis在windows平台还没有官方支持。但是用户可以使用cygwin在windows下面编译使用。
+ $ wget http://download.redis.io/releases/redis-4.0.2.tar.gz $ tar xzf redis-4.0.2.tar.gz $ cd redis-4.0.2 $ make # 暂时不安装到系统 $ cd src $ ./redis-server # 开启另一个终端 $ cd &amp;lt;刚才的src目录&amp;gt; $ ./redis-cli # 现在进入到了Redis的命令行环境，测试一下 127.</description>
+    </item>
+    
+    <item>
+      <title>Docker使用</title>
+      <link>https://starwild.github.io/posts/Docker%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 17 Oct 2017 11:23:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/Docker%E4%BD%BF%E7%94%A8/</guid>
+      <description># 使用docker安装neo4j sudo apt install docker.io docker pull neo4j docker run -p 7474:7474 -p 7687:7687 -v $HOME/neo4j/data:/data neo4j </description>
+    </item>
+    
+    <item>
+      <title>IO模型与NIO模型</title>
+      <link>https://starwild.github.io/posts/IO%E6%A8%A1%E5%9E%8B%E4%B8%8ENIO%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 16 Oct 2017 22:12:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/IO%E6%A8%A1%E5%9E%8B%E4%B8%8ENIO%E6%A8%A1%E5%9E%8B/</guid>
+      <description>IO与NIO读取数据 +--------+ +--------+ +------+| Thread +------------------------------------&amp;gt; stream +-----&amp;gt; OS |+--------+ +--------+ +------++--------+ +---------++-- &amp;gt; buffer +---&amp;gt; channel +--+| +--------+ +---------+ || |+--------+ +----------+ | +--------+ +---------+ | +------+| Thread +----&amp;gt; selector +----- &amp;gt; buffer +---&amp;gt; channel +-----&amp;gt; OS |+--------+ +----------+ | +--------+ +---------+ | +------+| || +--------+ +---------+ |+-- &amp;gt; buffer +---&amp;gt; channel +--++--------+ +---------+NIO读取含中文文本文件的例子 import java.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on starwild</title>
+    <link>https://starwild.github.io/tags/database/</link>
+    <description>Recent content in database on starwild</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 19 Oct 2017 19:25:00 +0800</lastBuildDate><atom:link href="https://starwild.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACID、CAP和BASE</title>
+      <link>https://starwild.github.io/posts/ACIDCAP%E5%92%8CBASE/</link>
+      <pubDate>Thu, 19 Oct 2017 19:25:00 +0800</pubDate>
+      
+      <guid>https://starwild.github.io/posts/ACIDCAP%E5%92%8CBASE/</guid>
+      <description> ACID Atomicity Consistency Isolation Durability CAP Consistency Availability Partition tolerance BASE Basically Available Soft state Eventual </description>
+    </item>
+    
+  </channel>
+</rss>
