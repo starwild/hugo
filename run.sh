@@ -10,7 +10,7 @@ ARGS="  -D \
 		--config config.yaml"
 
 build() {
-	git submodule foreach git pull
+	git submodule foreach git pull --ff-only
 	$HUGO $ARGS -d docs
 }
 
