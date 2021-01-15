@@ -5,7 +5,7 @@ draft: false
 tags: 
     - linux
 ---
-    from https://www.cnblogs.com/xxoome/p/7115614.html
+    https://www.cnblogs.com/xxoome/p/7115614.html
 
 ## 查看状态
 ```bash
