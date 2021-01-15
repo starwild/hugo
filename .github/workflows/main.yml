@@ -65,4 +65,4 @@ jobs:
           # Determines if --tags is used
           tags: true # optional
           # Directory to change to before pushing.
-          directory: ../docs # optional, default is .
+          directory: docs # optional, default is .

@@ -17,7 +17,8 @@ build() {
 
 publish() {
 	git branch --set-upstream-to=origin/main main
-	cd docs && git pull && git push
+	cd docs 
+	git push
 	cd -
 }
 
