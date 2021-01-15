@@ -9,6 +9,11 @@ cd $BASE
 ARGS="  -D \
 		--config config.yaml"
 
+read() {
+	rm -rf docs
+	git clone git clone https://github.com/starwild/starwild.github.io docs
+}
+
 build() {
 	git config --global pull.rebase true
 	git submodule foreach git pull
