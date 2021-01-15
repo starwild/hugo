@@ -29,7 +29,7 @@ jobs:
 
       - name: clone
         run: |
-          git clone https://github.com/starwild/starwild.github.io docs
+          git clone https://github.com/starwild/starwild.github.io ../docs
 
       # Runs a single command using the runners shell
       - name: build
@@ -63,4 +63,4 @@ jobs:
           # Determines if --tags is used
           tags: true # optional
           # Directory to change to before pushing.
-          directory: docs # optional, default is .
+          directory: ../docs # optional, default is .

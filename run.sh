@@ -1,6 +1,7 @@
 #!/bin/sh
 BASE="$(cd "$(dirname "$0")" && pwd)"
 HUGO=$BASE/bin/hugo
+DOCS=../docs
 
 chmod +x $HUGO
 
@@ -10,21 +11,21 @@ ARGS="  -D \
 		--config config.yaml"
 
 read() {
-	rm -rf docs
-	git clone git clone https://github.com/starwild/starwild.github.io docs
+	rm -rf $DOCS
+	git clone https://github.com/starwild/starwild.github.io $DOCS
 }
 
 build() {
 	git config --global pull.rebase true
 	git submodule foreach git pull
-	$HUGO $ARGS -d docs
+	$HUGO $ARGS -d $DOCS
 }
 
 publish() {
 	git branch --set-upstream-to=origin/main main
-	cd docs 
+	pushd $DOCS 
 	git push
-	cd -
+	popd
 }
 
 server() {
@@ -38,8 +39,11 @@ commit() {
 }
 
 
-while getopts ':bscph' P; do 
+while getopts ':rbscph' P; do 
 	case $P in
+		r)
+			read
+		;;
 		b)
 			build
 		;;
