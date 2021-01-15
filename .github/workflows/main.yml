@@ -38,13 +38,29 @@ jobs:
         run: bash run.sh -b
 
       # push docs
-      - name: push
-        run: |
-          cd ../docs
-          git config --global user.email "${{github.repository_owner}}@github.com"
-          git config --global user.name "${{github.repository_owner}}"
-          git config --global user.password "${{secrets.GITHUB_TOKEN}}"
-          git add .
-          git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
-          git push https://${{github.repository_owner}}:${{secrets.MY_KEY}}@github.com/starwild/page
-          cd -
+#       - name: push
+#         run: |
+#           cd ../docs
+#           git config --global user.email "${{github.repository_owner}}@github.com"
+#           git config --global user.name "${{github.repository_owner}}"
+#           git config --global user.password "${{secrets.GITHUB_TOKEN}}"
+#           git add .
+#           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
+#           git push https://${{github.repository_owner}}:${{secrets.MY_KEY}}@github.com/starwild/page
+#           cd -
+
+      - name: Git Push Action
+        # You may pin to the exact commit or the version.
+        # uses: x-actions/git-push@fa7affbdc76b1c598c8337f9b830ea11c6d13d70
+        uses: x-actions/git-push@v1
+        with:
+          # git user email
+          GITHUB_EMAIL: ${{github.repository_owner}}@github.com # optional, default is xiexianbin
+          # git use username
+          GITHUB_USERNAME: ${{github.repository_owner}} # optional, default is me@xiexianbin.cn
+          # https:/<token>@github.com/owner/repo.git
+          PUBLISH_REPO: https://${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository_owner}}/${{github.repository_owner}}.github.io.git # optional
+          # git branch
+          PUBLISH_BRANCH: main # optional
+          # dir to publish
+          PUBLISH_DIR: ../docs # optional
