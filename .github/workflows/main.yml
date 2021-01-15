@@ -29,7 +29,7 @@ jobs:
 
       - name: clone
         run: |
-          git clone https://github.com/starwild/page docs
+          git clone https://github.com/starwild/starwild.github.io docs
 
       # Runs a single command using the runners shell
       - name: build
@@ -55,7 +55,7 @@ jobs:
           # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
           github_token: ${{ secrets.HUGO_PUSH_GITHUB_TOKEN }}
           # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
-          repository: starwild/page # optional, default is 
+          repository: starwild/starwild.github.io # optional, default is 
           # Destination branch to push changes
           branch: main # optional, default is master
           # Determines if force push is used
