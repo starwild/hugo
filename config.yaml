@@ -56,12 +56,12 @@ params:
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo: https://github.com/starwild/starwild.github.io
+  BookRepo: https://github.com/starwild/hugo
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
   # Edit path must point to root directory of repo.
-  BookEditPath: edit/main/__src__
+  BookEditPath: edit/main
 
   # Configure the date format used on the pages
   # - In git information
