@@ -52,7 +52,7 @@ jobs:
           # Destination branch to push changes
           branch: main # optional, default is master
           # Determines if force push is used
-          force: false # optional
+          force: true # optional
           # Determines if --tags is used
           tags: true # optional
           # Directory to change to before pushing.
