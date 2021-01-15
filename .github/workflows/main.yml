@@ -27,19 +27,14 @@ jobs:
         with:
           ref: main
 
-      - name: clone
-        run: |
-          git clone https://github.com/starwild/starwild.github.io ../docs
-
       # Runs a single command using the runners shell
       - name: build
-        run: bash run.sh -b
+        run: bash run.sh -r -b
 
       # push docs
       - name: commit
         run: |
           cd ../docs
-          git config --global user.email "${{github.repository_owner}}@github.com"
           git config --global user.name "${{github.repository_owner}}"
           git add .
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a

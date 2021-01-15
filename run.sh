@@ -10,7 +10,7 @@ cd $BASE
 ARGS="  -D \
 		--config config.yaml"
 
-read() {
+read1() {
 	rm -rf $DOCS
 	git clone https://github.com/starwild/starwild.github.io $DOCS
 }
@@ -42,7 +42,7 @@ commit() {
 while getopts ':rbscph' P; do 
 	case $P in
 		r)
-			read
+			read1
 		;;
 		b)
 			build
