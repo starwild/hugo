@@ -35,7 +35,7 @@ jobs:
       - name: commit
         run: |
           cd ../docs
-          git config --global user.name "${{github.repository_owner}}"
+          git config --global user.name "z"
           git add .
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
           cd -

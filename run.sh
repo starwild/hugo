@@ -7,8 +7,7 @@ chmod +x $HUGO
 
 cd $BASE
 
-ARGS="  -D \
-		--config config.yaml"
+ARGS="-D --config config.yaml"
 
 read1() {
 	rm -rf $DOCS
