@@ -15,8 +15,7 @@ read1() {
 }
 
 build() {
-	git config --global pull.rebase true
-	git submodule foreach git pull
+	git submodule update --init --recursive
 	$HUGO $ARGS -d $DOCS
 }
 
