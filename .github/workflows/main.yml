@@ -35,6 +35,8 @@ jobs:
       - name: commit
         run: |
           cd ../docs
+          git config --global user.email "nobody@github.com"
+          git config --global user.name "nobody"
           git add .
           git status
           git commit -m "build $(date +%Y-%m-%d\ %H:%M:%S)" -a
