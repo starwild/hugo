@@ -7,7 +7,7 @@ draft: false
 linux内的动态库、可执行程序统一用elf称呼
 
 ## 增加elf动态库查询位置
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:YOUR_PATH
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:YOUR_PATH`
 
 ## 打印elf
 `strings xxx.so`
